@@ -6,10 +6,7 @@ Created on Tue Mar 12 00:49:36 2019
 @author: louismaestrati
 """
 
-
-import plotly.plotly as py
-import plotly.graph_objs as go
-import plotly.figure_factory as FF
+import os
 
 import numpy as np
 import pandas as pd
@@ -46,9 +43,10 @@ def plot(filepath, title):
     
 if __name__ == "__main__":
     
-    non_para = '/Users/louismaestrati/Desktop/para_demo/res_cpu_non_para.csv'
-    para = '/Users/louismaestrati/Desktop/para_demo/res_cpu_para.csv'
+    base_path = os.path.dirname(os.path.abspath(__file__))
+    
+    non_para = os.path.join(base_path, "res_cpu_non_para.csv")
+    para = os.path.join(base_path, "res_cpu_para.csv")
     
     plot(non_para, "non_para")
     plot(para, "para")
-    
